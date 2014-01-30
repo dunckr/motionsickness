@@ -3,6 +3,8 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 require 'guard/motion'
 require 'bubble-wrap'
+require 'bubble-wrap/http'
+require 'bubble-wrap/location'
 
 begin
   require 'bundler'
