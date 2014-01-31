@@ -8,7 +8,8 @@ class TabOneController < UIViewController
   end
 
   def loadView
-    self.view = UIView.alloc.init
+    # self.view = UIView.alloc.init
+    self.view = TabOneView.alloc.init
   end
 
   def viewDidLoad
