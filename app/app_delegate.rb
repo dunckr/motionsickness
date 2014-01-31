@@ -8,7 +8,8 @@ class AppDelegate
     tabbar.viewControllers = [
         TabOneController.alloc.init,
         TabTwoController.alloc.init,
-        TabThreeController.alloc.init
+        TabThreeController.alloc.init,
+        TabFourController.alloc.init
     ]
 
     tabbar.selectedIndex = 0
