@@ -1,10 +1,34 @@
 class AppDelegate
+
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
+    @window = UIWindow.alloc.initWithFrame UIScreen.mainScreen.bounds
 
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.applicationFrame)
-    # @window.makeKeyandVisible
+    tabbar = UITabBarController.alloc.init
+    tabbar.viewControllers = [
+        TabOneController.alloc.init,
+        TabTwoController.alloc.init,
+        TabThreeController.alloc.init
+    ]
 
+    tabbar.selectedIndex = 0
+
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController tabbar
+    @window.rootViewController.wantsFullScreenLayout = true
+    @window.makeKeyAndVisible
+
+    # @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.applicationFrame)
+    # @window.makeKeyAndVisible
+    # @view_controller = TapController.alloc.initWithNibName(nil, bundle:nil)
+    # @window.rootViewController = @view_controller
+
+
+    # tabbar.viewControllers = [TapController.alloc.initWithNibName(nil, bundle:nil)]
+    # tabbar.viewControllers = [BeerMapController.alloc.init, BeerListController.alloc.init]
+    # tabbar.selectedIndex = 0
+    # @window.rootViewController = UINavigationController.alloc.initWithRootViewController(tabbar)
+    # @window.rootViewController.wantsFullScreenLayout = true
+    # @window.makeKeyAndVisible
 
     # p "#{App.name} #{App.documents_path} #{BW.create_uuid}"
 
