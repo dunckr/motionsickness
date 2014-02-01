@@ -57,4 +57,9 @@ class AppDelegate
 
     true
   end
+
+  def beer_details_controller
+    @beer_details_controller ||= BeerDetailsController.alloc.init
+  end
+
 end

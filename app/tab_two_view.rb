@@ -5,19 +5,21 @@ class TabTwoView < UIView
       @button = UIButton.buttonWithType UIButtonTypeRoundedRect
       @button.setTitle 'Mail', forState: UIControlStateNormal
       @button.frame = [[100,100], [100,50]]
-      # @button.addTarget self, action: :click, forControlEvents: UIControlEventTouchUpInside
-      @button.when UIControlEventTouchUpInside do
-        self.click()
-      end
+      @button.addTarget self, action: 'click', forControlEvents: UIControlEventTouchUpInside
+      # @button.when UIControlEventTouchUpInside do
+      #   self.click()
+      # end
       addSubview @button
 
 
       @button2 = UIButton.buttonWithType UIButtonTypeRoundedRect
-      @button2.setTitle 'Deferred', forState: UIControlStateNormal
+      @button2.setTitle 'Compose', forState: UIControlStateNormal
       @button2.frame = [[100,200], [100,50]]
-      @button.when UIControlEventTouchUpInside do
-        self.deferred()
-      end
+      @button2.addTarget self, action: 'compose', forControlEvents: UIControlEventTouchUpInside
+
+      # @button.when UIControlEventTouchUpInside do
+      #   self.compose()
+      # end
       addSubview @button2
 
     end
@@ -26,21 +28,22 @@ class TabTwoView < UIView
 
   def click
     p 'clicked...'
-    # BW::Mail.compose {
-    #   delegate: self,
-    #   to: ['test@test.com']
-    # } do | result, error |
-    #   p error
-    #   p result
-    # end
+    @button.animateWithDuration(2,
+      animations: lambda {
+        @button.frame = [[100,400], [100,50]]
+      },
+      completion: lambda {
+      }
+    )
   end
 
-
-  def deferred
-    d = EM::DefaultDeferrable.new
-
-    d.callback { |what| p "Great #{what}!" }
-
-    d.succeed 'justice'
+  def compose
+    p 'in the mail'
+    BW::SMS.compose (
+      {
+        message: 'hrre'
+      }) {|result, error|
+      p 'sent...'
+    }
   end
 end

@@ -5,6 +5,8 @@ require 'guard/motion'
 require 'bubble-wrap'
 require 'bubble-wrap/http'
 require 'bubble-wrap/location'
+require 'bubble-wrap/sms'
+
 
 begin
   require 'bundler'
