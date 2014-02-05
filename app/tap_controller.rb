@@ -2,7 +2,6 @@ class TapController < UIViewController
 
   def viewDidLoad
     super
-
     @button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
     @button.setTitle('Test me title', forState:UIControlStateNormal)
     @button.accessibilityLabel = 'Test me!'

@@ -2,7 +2,7 @@ class TabFourController < UIViewController
 
   def init
     if super
-      self.tabBarItem = UITabBarItem.alloc.initWithTitle 'Tab 1', image:nil, tag:1
+      self.tabBarItem = UITabBarItem.alloc.initWithTitle 'Tab 4', image:nil, tag:1
     end
     self
   end
@@ -16,7 +16,7 @@ class TabFourController < UIViewController
   end
 
   def viewWillAppear(animated)
-    parentViewController.title = 'Tab 1 Title'
+    parentViewController.title = 'Tab 4 Title'
     parentViewController.navigationItem.leftBarButtonItem = nil
     parentViewController.navigationItem.rightBarButtonItem = nil
   end

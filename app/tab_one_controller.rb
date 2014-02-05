@@ -5,6 +5,9 @@ class TabOneController < UIViewController
   attr_reader :alerts
 
   def init
+    if super
+      self.tabBarItem = UITabBarItem.alloc.initWithTitle 'Tab 1', image:nil, tag:1
+    end
     super.tap do
       p 'we are tapped!'
       @text_view = build_text_view
@@ -17,6 +20,7 @@ class TabOneController < UIViewController
         @alerts << build_alert(style)
       end
     end
+    self
   end
 
   def viewDidLoad
