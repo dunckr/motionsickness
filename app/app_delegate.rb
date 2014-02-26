@@ -12,7 +12,8 @@ class AppDelegate
     tabbar = UITabBarController.alloc.init
     tabbar.viewControllers = [
         ComponentsController.alloc.init,
-        HtmlController.alloc.init
+        HtmlController.alloc.init,
+        TableController.alloc.init
     ]
     tabbar.selectedIndex = 0
     tabbar
