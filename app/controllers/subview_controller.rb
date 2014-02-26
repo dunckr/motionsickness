@@ -7,8 +7,8 @@ class SubviewController < UIViewController
     view.backgroundColor = UIColor.whiteColor
   end
 
-  def detail(name)
-    @name = name
+  def detail(point)
+    @name = point.name
     navigationItem.title = @name
   end
 
