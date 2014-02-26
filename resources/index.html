@@ -7,9 +7,15 @@
         margin-top: 50px; /* rm boundary at top of view*/
       }
     </style>
+    <script>
+      function pressed() {
+        window.location = 'myapp:bridge:lookImNative';
+      }
+    </script>
   </head>
   <body>
     <img src="native.jpg" alt="">
     <h1>phonegap wat?</h1>
+    <button onclick="pressed()">PRESS ME!</button>
   </body>
 </html>

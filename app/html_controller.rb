@@ -35,10 +35,20 @@ class HtmlController < UIViewController
   end
 
   def webView(inWeb, shouldStartLoadWithRequest:inRequest, navigationType:inType)
+
+    bridge inRequest.URL.absoluteString
+
     if inType == UIWebViewNavigationTypeLinkClicked && inRequest.URL.scheme != 'file'
       UIApplication.sharedApplication.openURL(inRequest.URL)
       return false
     end
     true
+  end
+
+  def bridge(command)
+    parts = command.split(':')
+    if parts[1] == 'bridge'
+      App.alert command.split(':')[2]
+    end
   end
 end
