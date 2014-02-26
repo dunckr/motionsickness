@@ -46,6 +46,4 @@ class TabThreeController < UITableViewController
     controller.showDetailsForBeer(beer)
   end
 
-
-
 end

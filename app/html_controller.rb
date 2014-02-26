@@ -1,8 +1,8 @@
-class TabTwoController < UIViewController
+class HtmlController < UIViewController
 
   def init
     if super
-      self.tabBarItem = UITabBarItem.alloc.initWithTitle 'Tab 2', image:nil, tag:1
+      self.tabBarItem = UITabBarItem.alloc.initWithTitle 'HTML', image:nil, tag:1
     end
     self
   end
@@ -25,9 +25,7 @@ class TabTwoController < UIViewController
     self.view.addSubview(@webView)
   end
 
-  # Enable rotation
   def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
-    # On the iPhone, don't rotate to upside-down portrait orientation
     if UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad
       if interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown
         return false
@@ -36,9 +34,8 @@ class TabTwoController < UIViewController
     true
   end
 
-  # Open absolute links in Mobile Safari
   def webView(inWeb, shouldStartLoadWithRequest:inRequest, navigationType:inType)
-    if inType == UIWebViewNavigationTypeLinkClicked && inRequest.URL.scheme != 'file' 
+    if inType == UIWebViewNavigationTypeLinkClicked && inRequest.URL.scheme != 'file'
       UIApplication.sharedApplication.openURL(inRequest.URL)
       return false
     end

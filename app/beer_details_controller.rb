@@ -11,5 +11,5 @@ class BeerDetailsController < UIViewController
     navigationItem.title = beer.title
     request = NSURLRequest.requestWithURL(beer.url)
     view.loadRequest(request)
-  end 
+  end
 end

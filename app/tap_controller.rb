@@ -8,7 +8,6 @@ class TapController < UIViewController
     @button.sizeToFit
     self.view.addSubview(@button)
 
-    # @button.addTarget(self, action:'tapped', forControlEvents:UIControlEventTouchUpInside)    # 
     @button.when(UIControlEventTouchUpInside) do
       self.tapped()
     end

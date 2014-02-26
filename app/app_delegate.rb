@@ -11,10 +11,8 @@ class AppDelegate
   def generateTabs
     tabbar = UITabBarController.alloc.init
     tabbar.viewControllers = [
-        TabOneController.alloc.init,
-        TabTwoController.alloc.init,
-        TabThreeController.alloc.init,
-        TabFourController.alloc.init
+        ComponentsController.alloc.init,
+        HtmlController.alloc.init
     ]
     tabbar.selectedIndex = 0
     tabbar
