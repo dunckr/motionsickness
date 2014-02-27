@@ -29,7 +29,7 @@ class TableController < UITableViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     point = Point::All[indexPath.row]
     @subview_controller ||= SubviewController.alloc.init
-    @subview_controller.detail point
+    @subview_controller.setPoint point
     self.navigationController.pushViewController(@subview_controller, animated:true)
   end
 

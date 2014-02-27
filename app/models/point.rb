@@ -1,6 +1,6 @@
 class Point
 
-  attr_accessor :name, :coord, :info
+  attr_accessor :name, :coordinate, :info
 
   def initialize(name,lat,long,info)
     @name = name

@@ -7,7 +7,6 @@ require 'bubble-wrap/http'
 require 'bubble-wrap/location'
 require 'bubble-wrap/sms'
 
-
 begin
   require 'bundler'
   Bundler.require
@@ -17,4 +16,5 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'motionsickness'
+  app.frameworks += ['MapKit']
 end
