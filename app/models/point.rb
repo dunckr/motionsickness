@@ -1,7 +1,5 @@
 class Point
 
-  attr_accessor :name, :coordinate, :info
-
   def initialize(name,lat,long,info)
     @name = name
     @coordinate = CLLocationCoordinate2D.new
@@ -9,6 +7,10 @@ class Point
     @coordinate.longitude = long
     @info = info
   end
+
+  def name; @name; end
+  def coordinate; @coordinate; end
+  def info; @info; end
 
   All = [
     Point.new('We', 50.016667, 4.316667, 'Chimay'),
