@@ -3,9 +3,7 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 require 'guard/motion'
 require 'bubble-wrap'
-require 'bubble-wrap/http'
-require 'bubble-wrap/location'
-require 'bubble-wrap/sms'
+require 'bubble-wrap/all'
 
 begin
   require 'bundler'
@@ -16,5 +14,5 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'motionsickness'
-  app.frameworks += ['MapKit']
+  app.frameworks += ['MapKit','AssetsLibrary']
 end

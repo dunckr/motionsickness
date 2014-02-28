@@ -12,7 +12,7 @@ class ComponentsController < UIViewController
   end
 
   def viewDidLoad
-    view.backgroundColor = UIColor.orangeColor
+    view.backgroundColor = UIColor.lightGrayColor
   end
 
   def viewWillAppear(animated)
